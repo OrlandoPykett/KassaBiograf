@@ -2,12 +2,12 @@ package com.mycompany.app.Items;
 
 public class Ticket {
 
-    private final String title;
+    private Movie movie;
     private final long price;
     private AgeRequirement ageReq;
 
-    public Ticket(String title, long price, AgeRequirement ageReq) {
-        this.title = title;
+    public Ticket(Movie movie, long price, AgeRequirement ageReq) {
+        this.movie = movie;
         this.price = price;
     }
 
