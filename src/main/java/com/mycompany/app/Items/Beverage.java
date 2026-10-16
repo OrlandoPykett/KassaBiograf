@@ -1,5 +1,7 @@
 package com.mycompany.app.Items;
 
+import com.mycompany.app.Money;
+
 import static com.mycompany.app.Items.AgeRequirement.*;
 
 public class Beverage extends Item {
@@ -7,7 +9,7 @@ public class Beverage extends Item {
     private BeverageSize size;
     private AgeRequirement ageReq;
 
-    public Beverage(String id, String name, long price, BeverageSize size, boolean isAlcoholic) {
+    public Beverage(String id, String name, Money price, BeverageSize size, boolean isAlcoholic) {
         super(id, name, price);
         this.size = size;
 
@@ -17,5 +19,17 @@ public class Beverage extends Item {
         else {
             this.ageReq = AGE_0;
         }
+    }
+
+    public BeverageSize getSize() {
+        return size;
+    }
+
+    public AgeRequirement getAgeReq() {
+        return ageReq;
+    }
+
+    public boolean customerIsOfAge(int age) {
+        return ageReq.isOfAge(age);
     }
 }
